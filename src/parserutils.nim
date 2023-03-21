@@ -162,7 +162,7 @@ proc extractUrls(result: var seq[ReplaceSlice]; js: JsonNode;
       result.add ReplaceSlice(kind: rkRemove, slice: slice)
   else:
     result.add ReplaceSlice(kind: rkUrl, url: url,
-                            display: url.shortLink, slice: slice)
+                            display: url, slice: slice)
 
 proc extractHashtags(result: var seq[ReplaceSlice]; js: JsonNode) =
   result.add ReplaceSlice(kind: rkHashtag, slice: js.extractSlice)
